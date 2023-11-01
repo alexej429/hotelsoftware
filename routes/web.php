@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('umwelt', UmweltController::class);
+Route::get('/', function() {
+    return view("home");
+});

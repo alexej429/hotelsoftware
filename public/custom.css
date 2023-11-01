@@ -10,4 +10,15 @@
     border-radius: 16px;
     box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
                 0 32px 64px -48px rgba(0,0,0,0.5);
+    /* background-image: url("/hotel-6862159_1920.jpg"); */
+}
+
+.wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
 }
