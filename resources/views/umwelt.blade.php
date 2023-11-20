@@ -14,7 +14,7 @@
 
     </head>
     <body class="antialiased">
-        <div class="wrapper">
+        <div class="wrapper" style="background-image: url(hotel-6862159_1920.jpg)">
             <h1 >Umweltdatenmodul</h1>
 
             <div>
