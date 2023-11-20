@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\UmweltController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\test;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +13,12 @@ use App\Http\Controllers\test;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::resource('umwelt', UmweltController::class);
+Route::get('/', function() {
+   // dd(view('home'));
+    return view("home");
+});

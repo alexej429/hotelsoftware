@@ -1,0 +1,58 @@
+.wrapper {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    font: "Tahome";
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: large;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+    /* background-image: url("/hotel-6862159_1920.jpg"); */
+
+    color: white;
+    
+}
+
+
+.wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header a {
+    padding: 12px 24px;
+    color: whitesmoke;
+}
+
+.room-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px auto;
+    width: 30%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.room-card .room-infos {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.room-card button {
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #2ecc71;
+    color: #ecf0f1;
+    padding: 6px 12px;
+    border-width: 0;
+    /* outline: none; */
+    border-radius: 2px;
+    cursor: pointer;
+}
