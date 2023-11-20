@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReservierungsController;
 use App\Http\Controllers\UmweltController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::resource('reservierung', ReservierungsController::class);
 Route::resource('umwelt', UmweltController::class);
 Route::get('/', function() {
    // dd(view('home'));

@@ -17,8 +17,9 @@
 
         <div class="header">
             <a href="/umwelt">Umweltdaten</a>
-            <a href="/">Autobuchung</a>
-            <a href="/">Login</a>
+            <a href="/reservierung">Reservierungsmodul</a>
+            <a href="/rechnungsmodul">Rechnungsmodul</a>
+            <a href="/">Autoreservierung</a>
         </div>
 
         
@@ -40,7 +41,10 @@
             <img src="/room-1.jpg"/>
             <div class="room-infos">
                 <div>Betten: 2</div>
-                <div>Preis: 100€</div>
+                <div>Preis pro Tag: 100€</div>
+                <div><label for="">Anzahl Tage: </label></div>
+                <div><input id=""/></div>
+                <div>Gesamtpreis: </div>
                 <button>Buchen</button>
             </div>
         </div>
@@ -49,7 +53,9 @@
             <img src="/room-2.jpg"/>
             <div class="room-infos">
                 <div>Betten: 1</div>
-                <div>Preis: 100€</div>
+                <div>Preis pro Tag: 100€</div>
+                <div><label for="">Anzahl Tage: </label></div>
+                <div><input id=""/></div>
                 <button>Buchen</button>
             </div>
         </div>
