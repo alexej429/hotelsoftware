@@ -34,19 +34,28 @@
                 nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis 
                 dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
             </div>
-
+            {{$hotelRooms}}
             {{-- <img src="/hotel-6862159_1920.jpg"/> --}}
-
+            @php
+            
+            @endphp
             <div class="room-card">
                 <img src="/room-1.jpg"/>
                 <div class="room-infos">
-                    <div>Betten: 2</div>
-                    <div>Preis pro Tag: 100€</div>
-                    <div><label for="dayInput">Anzahl Tage: </label></div>
-                    <div><input id="dayInput"/></div>
-                    <div>Gesamtpreis: <span id="gesamtpreis"></span></div>
-                    
-                    <button>Buchen</button>
+                    <form method="POST" action="/buchen" enctype="multipart/form-data">
+                        @method("POST");
+                        @csrf
+                        <div>Betten: 2</div>
+                        <div>Preis pro Tag: 100€</div>
+                        <div><label for="dayInput">Anzahl Tage: </label></div>
+                        <div><input id="dayInput"/></div>
+                        <div>Gesamtpreis: <span id="gesamtpreis"></span></div>
+                        <div>
+                            <label for="fullName">Vor- und Nachname:</label>
+                            <input id="fullName" name="fullName"/>
+                        </div>
+                        <div><button>Buchen</button><button>Reservieren</button></div>
+                    </form>
                 </div>
             </div>
 
@@ -69,9 +78,25 @@
         days.addEventListener("input", (e) => {
             
             let gesamtpreis =  100 * parseInt(days.value);
-            document.getElementById("gesamtpreis").textContent = gesamtpreis;
+            document.getElementById("gesamtpreis").textContent = gesamtpreis + " €";
 
         }); 
+
+        let btn = document.querySelector(".room-card .room-infos button");
+        let data = {
+            test : "test",
+        }
+
+        const formData = new FormData();
+        formData.append("data", data);
+        btn.onclick = async (e) => {
+            e.preventDefault();
+            await fetch("/buchen", {
+                method: "POST",
+                body: JSON.stringify(formData),
+            });
+        }
+        
 
     </script>
 </html>

@@ -18,5 +18,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\Benutzer::create([
+            "id" => 1,
+            "fullName" => "Test User",
+        ]);
+
+        \App\Models\Zimmer::create([
+            "id" => 1,
+            "price" => 100,
+            "betten" => 2,
+            "gebuchtVon" => 1,
+        ]);
     }
 }
