@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Zimmer;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -12,9 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hotelRooms = Zimmer::all();
+        // $hotelRooms = Zimmer::all();
         $data = [
-            "hotelRooms" => $hotelRooms,
+            "hotelRooms" => "testdata",
         ];
         // return view('welcome')->with('data', $data);
         return view('home', $data);
@@ -34,8 +35,10 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
-        // dd($request->all());
+        dd($request->input("fullName"));
+        
+        // TODO: store data in db
+        
         // return redirect("/umwelt");
     }
 

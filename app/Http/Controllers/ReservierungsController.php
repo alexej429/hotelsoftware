@@ -12,7 +12,11 @@ class ReservierungsController extends Controller
     public function index()
     {
         //
-        $data = [];
+        $data = [
+            "zimmer" => "Zimmer 1",
+            "reserviertVon" => "Gast 1",
+        ];
+        
         return view('reservierung', $data);
     }
 
@@ -29,7 +33,8 @@ class ReservierungsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TODO: put data in database
+        
     }
 
     /**

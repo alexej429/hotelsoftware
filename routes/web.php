@@ -24,3 +24,4 @@ Route::resource('umwelt', UmweltController::class);
 Route::get('/', [HomeController::class, "index"]);
 
 Route::post("/buchen", [ HomeController::class,  "store"]);
+Route::post("/reservieren", [ReservierungsController::class, "store"]);

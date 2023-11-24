@@ -17,8 +17,36 @@
 
             <h1>Reservierungsmodul</h1>
             
+            <div>
+                <label for="selectRoom">Zimmer auswählen:</label>
+                <select id="selectRoom">
+                    <option>Zimmer 1</option>
+                    <option>Zimmer 2</option>
+                </select>
+                <div>
+                    <form action="/reservieren" method="POST">
+                        <label for="guestName">Reservieren für:</label>
+                        <input id="guestName"/>
+                        <div><button>Reservieren</button></div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <div>Folgende Zimmer sind reserviert:</div>
+                <div>
+                    {{$zimmer}} an {{$reserviertVon}}
+                </div>
+            </div>
+
+
             
 
         </div>
+
+        <script>
+
+        </script>
+
     </body>
 </html>

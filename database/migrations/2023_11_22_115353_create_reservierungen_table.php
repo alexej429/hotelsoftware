@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reservierungen', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
             $table->timestamps();
+
+            
+            $table->foreign("zimmerId")->references("id")->on("benutzer");
         });
     }
 
