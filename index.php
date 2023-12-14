@@ -145,14 +145,14 @@ $dbh->exampleData();
                     const formData = new FormData();
                     const checkIn = picker.getStartDate();
                     const checkOut = picker.getEndDate();
-                    const totalPrice = getTotalPrice(checkIn, checkOut, room["price"]);
+                    const tPrice = getTotalPrice(checkIn, checkOut, room["price"]);
 
                     const data = {
                         firstName: firstNameInput.value,
                         lastName: lastNameInput.value,
                         checkIn: checkIn,
                         checkOut: checkOut,
-                        totalPrice: totalPrice,
+                        totalPrice: tPrice,
                         roomId: room["room_id"],
                     }
                    
@@ -162,20 +162,28 @@ $dbh->exampleData();
                         body: formData,
                     });
                     console.log(await res.text());
+
+                    //clear user input
+                    picker.clear();
+                    totalPrice.innerHTML = "";
+                    numberDays.innerHTML = "";
+                    firstNameInput.value = "";
+                    lastNameInput.value = "";
+
                 }
 
                 reservationBtn.onclick = async (e) => {
                     const formData = new FormData();
                     const checkIn = picker.getStartDate();
                     const checkOut = picker.getEndDate();
-                    const totalPrice = getTotalPrice(checkIn, checkOut, room["price"]);
+                    const tPrice = getTotalPrice(checkIn, checkOut, room["price"]);
 
                     const data = {
                         firstName: firstNameInput.value,
                         lastName: lastNameInput.value,
                         checkIn: checkIn,
                         checkOut: checkOut,
-                        totalPrice: totalPrice,
+                        totalPrice: tPrice,
                         roomId: room["room_id"],
                     }
 
@@ -185,11 +193,20 @@ $dbh->exampleData();
                         body: formData,
                     });
                     console.log(await res.text());
+
+                    //clear user input
+                    picker.clear();
+                    totalPrice.innerHTML = "";
+                    numberDays.innerHTML = "";
+                    firstNameInput.value = "";
+                    lastNameInput.value = "";
+
                 }
 
 
                 document.querySelector("#rooms").appendChild(roomCard);
             }
+
 
             // Hilfsfuntkion: Berechnet Gesamtpreis
             function getTotalPrice(startDate, endDate, pricePerDay) {
