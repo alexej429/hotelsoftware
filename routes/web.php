@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return redirect()->route('autovermietung.index');
 });
+Route::resource('/autovermietung', \App\Http\Controllers\AutovermietungController::class);
+Route::resource('/auto', \App\Http\Controllers\AutoController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
